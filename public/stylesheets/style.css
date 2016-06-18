@@ -1,0 +1,99 @@
+footer{
+	background:#333;
+	color:#fff;
+	height:40px;
+	padding-top:10px;
+	text-align: center;
+	margin-top:30px;
+}
+
+.heading{
+	background:#666;
+	color:#fff;
+	padding: 5px;
+}
+
+.article{
+	border-bottom:#ccc solid 1px;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+
+/* Styles go here */
+
+.my-controller {
+  border: 1px solid #fcc;
+  padding: 5px;
+  margin: 3px;
+}
+.my-controller small {
+  color: #c99;
+}
+.other-controller {
+  
+  padding: 1px;
+  margin: 3px;
+}
+.other-controller small {
+  color: #99c;
+}
+.third-controller {
+  border: 1px solid #cfc;
+  padding: 5px;
+  margin: 3px;
+}
+.third-controller small {
+  color: #9c9;
+}
+.form-control-noborder {
+    border: none;   
+}
+.btn-group-cb {
+      position: relative;
+  /* display: inline-block; */
+  vertical-align: middle;
+}
+
+.label-value {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.navbar .brand {
+    max-height: 40px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.navbar-brand > img {
+  object-fit: contain;
+  max-height: 150%;
+  height: 150%;
+}
+h1.error-message{
+    color: red;
+}
+
+.template-name {
+    border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.div-temp-rep {
+    max-height: 60px; 
+    overflow-y: scroll;
+}
+
+form-control {
+  border: none;
+}
+.modal-body {
+    background-color: floralwhite;
+}
+.modal-header {
+    background-color: lavenderblush;
+}

@@ -1,0 +1,69 @@
+<div ng-controller="PatientDetailsCtrl">
+	<a class="fa fa-backward" href="#/patients/searchResults"></a>
+    
+    
+    <div class="pull-right">
+    <a class="fa fa-plus" ng-click="toggleAddRow()" title="Add Followup"></a></td>
+    </div>
+	
+    <h1>{{patient.lname}}, {{patient.fname}}</h1>
+    
+		<hr>
+
+<div class="col-md-9">
+	<div class="table-responsive">
+		<table class="table table-striped" >
+              <thead>
+                
+                  <th>Followup Date</th>
+                  <th>Last Observation</th>
+                  <th>Fee</th>
+                  
+            </thead>
+              <tbody>
+                <tr dir-paginate="followup in patient.followupDetails | itemsPerPage: pageSize track by $index" current-page="currentPage">
+                  
+                  <td style="width: 25%">{{followup.dof | date}}</td>
+                    <td style="width: 65%"><a href="" class="btn-sm btn-link"ng-click="open(followup)">{{followup.observations | limitTo: 40}}</a></td>
+                    <td style="width: 10%">{{followup.fee}}</td>
+                    </tr>
+                </tbody>
+            
+            <div ng-include src="'../views/followup-details.view.html'" ng-show="addRow"></div>      
+        </table>
+    <div ng-controller="OtherController" class="other-controller">
+              <div class="text-right">
+              <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="bower_components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+    </div>
+
+			
+	</div>
+
+	<div class="actions">
+		<a href="#/patients/edit/{{patient._id}}" class="fa fa-edit" title="Edit"></a>
+		<a href="#/patients" class="fa fa-minus" title="Delete" ng-click="removePatient()"></a>
+	</div>
+
+	
+</div>
+    <div class="col-md-3 pull-right" >
+       
+           <div class="div-temp-rep">
+            <li ng-repeat="report in availableReports track by $index"><a target="_blank" href="" ng-click="getFile(report)">{{report.filename}}</a></li>
+        </div>
+        <hr/>
+        
+        <input type="file" file-model="myFile" name="filefield"/> 
+        
+        <a class="btn-xs btn-primary pull-right" ng-click="uploadFile()" >Upload</a>
+       
+        <hr/>
+        <label>Templates</label>
+         <div class="div-temp-rep">
+             
+            <li ng-repeat="template in templates track by $index"><a target="_blank" href="" ng-click="openTemplate(template)">{{template.name}}</a></li>
+        </div>
+
+    </div>
+</div>

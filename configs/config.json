@@ -1,0 +1,5 @@
+{
+    "orgName": "Sunshine Homeo Clinic",
+    "otherData": "Other Details",
+    "database": "mongodb://localhost/pms"
+}

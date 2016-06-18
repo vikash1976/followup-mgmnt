@@ -1,0 +1,98 @@
+<h3 class="heading">Dashboard</h3>
+<div ng-controller = "PatientsDashboardCtrl">
+    
+    <a class="fa fa-backward" href="/#patients/searchResults"></a>
+
+    <div class="row">
+      <div class="col-md-3"> 
+        <label>
+            <input type="radio" ng-model="dashboard.option" value="1" ng-change="clearOutput(dashboard.option)">Datewise</label>
+        </div>
+        <div class="col-md-3">
+            <label>
+                <input type="radio" ng-model="dashboard.option" value="2" ng-change="clearOutput(dashboard.option)">Agewise</label>
+        </div>
+    </div>
+        <div class="row" ng-show="dashboard.option == '1'">
+        <div class="col-md-3">    
+                     
+            <input type="date" ng-model="dashboard.dateRange.date1" class="form-control" timezone="UTC"/>
+        </div>
+        <div class="col-md-3">
+          
+        <input type="date" ng-model="dashboard.dateRange.date2" class="form-control" timezone="UTC"/>
+        </div>
+            <div class="col-md-3">
+            <a class="btn btn-primary" ng-click="findFollowups()">Followups</a>
+            <a class="btn btn-default" ng-click="findNewRegs()">New Registration</a>
+           
+        </div>
+        
+       </div>
+    
+    
+       <div class="row" ng-show="dashboard.option == '2'"> 
+        <div class="col-md-3">
+                <input type="number" ng-model="dashboard.ageRange.age1" class="form-control" />
+         </div>
+        <div class="col-md-3">
+          <input type="number" ng-model="dashboard.ageRange.age2" class="form-control"/>
+
+      </div>
+           <div class="col-md-3">
+           <a class="btn btn-primary" ng-click="findFollowups()">Get Patients</a>
+        </div>
+    </div>
+    
+    <hr/>
+	<div class="table-responsive" ng-show="showAgewise">
+		<table class="table table-striped" >
+              <thead>
+                
+                  <th>Age</th>
+                  
+                  <th>Count</th>
+            </thead>
+              <tbody>
+                   
+                
+                  <tr dir-paginate="patient in patients | itemsPerPage: pageSize" current-page="currentPage">
+                  <td style="width: 50%">{{patient._id}}</td>
+                  <td style="width: 50%">{{patient.count}}</td>
+                 
+                 
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+    <div class="table-responsive" ng-show="showDatewise">
+		<table class="table table-striped" >
+              <thead>
+                
+                  <th>Date</th>
+                  
+                  <th>Sum</th>
+            </thead>
+              <tbody>
+                   
+                
+                  <tr dir-paginate="patient in patients | itemsPerPage: pageSize" current-page="currentPage">
+                  <td style="width: 50%">{{patient._id | date}}</td>
+                  <td style="width: 50%">{{patient.sum | currency: "INR"}}</td>
+                 
+                 
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+      </div>
+    <div ng-controller="OtherController" class="other-controller">
+          <div class="text-right">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="bower_components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+   
+        
+   

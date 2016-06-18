@@ -1,0 +1,112 @@
+<div ng-controller = "PatientCreateCtrl">
+<h3>Add Patient</h3>
+<form ng-submit="addPatient()" name="addPatientForm" novalidate>
+    <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>FisrtName</label>
+            <input type="text" class="form-control" ng-model="patient.fname" name="fname" placeholder="FirstName" ng-required="true">
+              <div class="form-group" ng-class="{ 'has-error': addPatientForm.fname.$touched && addPatientForm.fname.$invalid }" ng-messages="addPatientForm.fname.$error" ng-if="addPatientForm.fname.$touched">
+    
+            <div ng-messages-include="../views/validation-messages.view.html"></div>
+            </div>
+          </div>
+            <div class="form-group">
+            <label>LastName</label>
+            <input type="text" class="form-control" ng-model="patient.lname" name="lname" placeholder="lastName" ng-required="true">
+                <div class="form-group" ng-class="{ 'has-error': addPatientForm.lname.$touched && addPatientForm.lname.$invalid }" ng-messages="addPatientForm.lname.$error" ng-if="addPatientForm.lname.$touched">
+    
+            <div ng-messages-include="../views/validation-messages.view.html"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+           <input type="text" class="form-control" ng-model="patient.age" name="age" placeholder="Age" ng-required="true" only-numbers>
+            <div class="form-group" ng-class="{ 'has-error': addPatientForm.age.$touched && addPatientForm.age.$invalid }" ng-messages="addPatientForm.age.$error" ng-if="addPatientForm.age.$touched">
+    
+            <div ng-messages-include="../views/validation-messages.view.html"></div>
+            </div>
+        </div>
+            <div class="form-group">
+            <label>Gender</label>
+           <select class="form-control"  ng-init="patient.sex = 'F'" ng-model="patient.sex" name="sex" ng-options="a for a in gender">
+              
+                </select>
+          </div>
+            <div class="form-group">
+            <label>Height</label>
+           <input type="text" class="form-control" ng-model="patient.height" name="height" placeholder="Height">
+          </div>
+            <div class="form-group">
+            <label>Weight</label>
+           <input type="text" class="form-control" ng-model="patient.weight" name="weight" placeholder="Weight">
+          </div>
+          <div class="form-group">
+            <label>Next Followup Date</label>
+            <input type="date" class="form-control" ng-model="patient.donf" name="donf" ></input>
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Address1</label>
+            <input type="text" class="form-control" ng-model="patient.address.address1" name="address1" placeholder="Address1">
+          </div>
+          <div class="form-group">
+            <label>Address2</label>
+           <input type="text" class="form-control" ng-model="patient.address.address2" name="address2" placeholder="Address2">
+          </div>
+          <div class="form-group">
+            <label>Locality</label>
+            <input type="text" class="form-control" ng-model="patient.address.locality" name="locality" placeholder="Locality"></input>
+          </div>
+    <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" ng-model="patient.address.city" name="city" placeholder="City"></input>
+          </div>
+    <div class="form-group">
+            <label>State</label>
+            <input type="text" class="form-control" ng-model="patient.address.state" name="state" placeholder="State"></input>
+          </div>
+<div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" ng-model="patient.address.country" name="country" placeholder="Country"></input>
+          </div>
+<div class="form-group">
+            <label>ZIP</label>
+            <input type="text" class="form-control" ng-model="patient.address.zip" name="zip" placeholder="ZIP"></input>
+          </div>
+    </div>
+<div class="col-md-4">
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" class="form-control" ng-model="patient.contacts.mobile" name="mobile" placeholder="Mobile" ng-minlength="10" ng-maxlength="10" ng-required="true" only-numbers>
+            <div class="form-group" ng-class="{ 'has-error': addPatientForm.mobile.$touched && addPatientForm.mobile.$invalid }" ng-messages="addPatientForm.mobile.$error" ng-if="addPatientForm.mobile.$touched">
+    
+            <div ng-messages-include="../views/validation-messages.view.html"></div>
+            </div>
+    </div>
+          <div class="form-group">
+            <label>Home</label>
+           <input type="text" class="form-control" ng-model="patient.contacts.home" name="home" placeholder="Home">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" ng-model="patient.contacts.email" name="email" placeholder="Email"></input>
+          </div>
+<div class="form-group">
+            <label>Observation</label>
+    <textarea class="form-control" rows="7" ng-model="observations" name="observations" placeholder="Observation Details"></textarea>
+          </div>
+<div class="form-group">
+            <label>Fee</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount" only-digits></input>
+          </div>
+        </div>
+    </div>
+        
+
+          <button type="submit" class="btn-xs btn-primary" ng-disabled="addPatientForm.$invalid">Submit</button>
+          <a class="btn-sm btn-danger" href="/#patients/searchResults">Cancel</a>
+        
+        </div>
+

@@ -1,0 +1,124 @@
+<div ng-controller = "PatientDetailsCtrl">
+<h3>Add Patient</h3>
+<form ng-submit="updatePatient()">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Complexion</label>
+            <input type="text" class="form-control" ng-model="patient.fname" name="fname" placeholder="FirstName">
+          </div>
+            <div class="form-group">
+            <label>Thirst/Tounge</label>
+            <input type="text" class="form-control" ng-model="patient.lname" name="lname" placeholder="lastName">
+          </div>
+          <div class="form-group">
+            <label>Bowel/Mict</label>
+           <input type="text" class="form-control" ng-model="patient.age" name="age" placeholder="Age">
+          </div>
+            <div class="form-group">
+            <label>Perspiration/Sweating</label>
+           <select class="form-control"  ng-init="patient.sex = 'F'" ng-model="patient.sex" name="sex" ng-options="a for a in gender">
+              
+                </select>
+          </div>
+            <div class="form-group">
+            <label>Sleep/Dreams</label>
+           <input type="text" class="form-control" ng-model="patient.height" name="height" placeholder="Height">
+          </div>
+            <div class="form-group">
+            <label>Palms/Nails</label>
+           <input type="text" class="form-control" ng-model="patient.weight" name="weight" placeholder="Weight">
+          </div>
+          <div class="form-group">
+            <label>Sun heat Aggrevation</label>
+            <input type="date" class="form-control" ng-model="patient.donf" name="donf" ></input>
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Elbows</label>
+            <input type="text" class="form-control" ng-model="patient.address.address1" name="address1" placeholder="Address1">
+          </div>
+          <div class="form-group">
+            <label>Wart/Moles</label>
+           <input type="text" class="form-control" ng-model="patient.address.address2" name="address2" placeholder="Address2">
+          </div>
+          <div class="form-group">
+            <label>Nose/Throat</label>
+            <input type="text" class="form-control" ng-model="patient.address.locality" name="locality" placeholder="Locality"></input>
+          </div>
+    <div class="form-group">
+            <label>Sole of Feet/Lat. Mall</label>
+            <input type="text" class="form-control" ng-model="patient.address.city" name="city" placeholder="City"></input>
+          </div>
+    <div class="form-group">
+            <label>Corns</label>
+            <input type="text" class="form-control" ng-model="patient.address.state" name="state" placeholder="State"></input>
+          </div>
+<div class="form-group">
+            <label>Skin</label>
+            <input type="text" class="form-control" ng-model="patient.address.country" name="country" placeholder="Country"></input>
+          </div>
+<div class="form-group">
+            <label>Ear festers</label>
+            <input type="text" class="form-control" ng-model="patient.address.zip" name="zip" placeholder="ZIP"></input>
+          </div>
+    </div>
+<div class="col-md-4">
+        <div class="form-group">
+            <label>Miastmatic</label>
+            <input type="text" class="form-control" ng-model="patient.contacts.mobile" name="mobile" placeholder="Mobile">
+          </div>
+          <div class="form-group">
+            <label>Anger/Consolation</label>
+           <input type="text" class="form-control" ng-model="patient.contacts.home" name="home" placeholder="Home">
+          </div>
+          <div class="form-group">
+            <label>Emotions</label>
+            <input type="email" class="form-control" ng-model="patient.contacts.email" name="email" placeholder="Email"></input>
+          </div>
+<div class="form-group">
+            <label>Menstrual H/O</label>
+    <textarea class="form-control" rows="7" ng-model="observations" name="observations" placeholder="Observation Details"></textarea>
+          </div>
+<div class="form-group">
+            <label>Leucorrhoea</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>Confidence</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>Breast pain</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>LM/Constipation during MC</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>H/O major illness</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>IDDM</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>H1</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+<div class="form-group">
+            <label>Thyroid</label>
+            <input type="text" class="form-control" ng-model="fee" name="fee" placeholder="Amount"></input>
+          </div>
+        </div>
+    </div>
+        
+
+          <button type="submit" class="btn btn-default">Submit</button>
+          <a class="btn btn-danger" href="/#patients">Cancel</a>
+        
+        </div>
+

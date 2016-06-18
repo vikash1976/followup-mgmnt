@@ -1,0 +1,13 @@
+<div class="row" ng-controller = "uploadCtrl">
+    <div class="col-md-3">
+        <input class="btn btn-default" type="file" file-model="myFile" name="filefield"/>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+    </div>
+    <div class="col-md-3">
+         <a target="_self" href="http://localhost:3000/patients/upload/VP2015_1.jpg">ReadFile</a>
+        <button class="btn btn-primary" ng-click="readFile()">Read</button>
+    </div>
+</div>
+

@@ -1,0 +1,126 @@
+<div ng-controller = "PatientEditCtrl">
+
+    <div class="row">
+        <h3>Edit Patient</h3>
+    <h4 class="pull-right">Registred On: {{patient.dor | date}}</h3>
+    </div>
+<form ng-submit="editPatient()">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>FisrtName</label>
+            <input type="text" class="form-control" ng-model="patient.fname" name="fname" placeholder="FirstName">
+          </div>
+            <div class="form-group">
+            <label>LastName</label>
+            <input type="text" class="form-control" ng-model="patient.lname" name="lname" placeholder="lastName">
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+           <input type="text" class="form-control" ng-model="patient.age" name="age" placeholder="Age">
+          </div>
+            <div class="form-group">
+            <label>Gender</label>
+           <select class="form-control"  ng-model="patient.sex" name="sex" ng-options="a for a in gender">
+              
+                </select>
+          </div>
+            <div class="form-group">
+            <label>Height</label>
+           <input type="text" class="form-control" ng-model="patient.height" name="height" placeholder="Height">
+          </div>
+            <div class="form-group">
+            <label>Weight</label>
+           <input type="text" class="form-control" ng-model="patient.weight" name="weight" placeholder="Weight">
+          </div>
+          <div class="form-group">
+            <label>Next Followup Date</label>
+            <input type="date" class="form-control" ng-model="patient.donf" name="donf" ></input>
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Address1</label>
+            <input type="text" class="form-control" ng-model="patient.address.address1" name="address1" placeholder="Address1">
+          </div>
+          <div class="form-group">
+            <label>Address2</label>
+           <input type="text" class="form-control" ng-model="patient.address.address2" name="address2" placeholder="Address2">
+          </div>
+          <div class="form-group">
+            <label>Locality</label>
+            <input type="text" class="form-control" ng-model="patient.address.locality" name="locality" placeholder="Locality"></input>
+          </div>
+    <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" ng-model="patient.address.city" name="city" placeholder="City"></input>
+          </div>
+    <div class="form-group">
+            <label>State</label>
+            <input type="text" class="form-control" ng-model="patient.address.state" name="state" placeholder="State"></input>
+          </div>
+<div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" ng-model="patient.address.country" name="country" placeholder="Country"></input>
+          </div>
+<div class="form-group">
+            <label>ZIP</label>
+            <input type="text" class="form-control" ng-model="patient.address.zip" name="zip" placeholder="ZIP"></input>
+          </div>
+    </div>
+<div class="col-md-4">
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" class="form-control" ng-model="patient.contacts.mobile" name="mobile" placeholder="Mobile">
+          </div>
+          <div class="form-group">
+            <label>Home</label>
+           <input type="text" class="form-control" ng-model="patient.contacts.home" name="home" placeholder="Home">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" ng-model="patient.contacts.email" name="email" placeholder="Email"></input>
+          </div>
+
+        </div>
+    </div>
+
+<div class="row">
+    <div class="table-responsive">
+		<table class="table table-striped" >
+              <thead>
+                
+                  <th>Followup Date</th>
+                  <th>Last Observation</th>
+                  
+            </thead>
+              <tbody>
+                
+                  <tr ng-repeat="followup in patient.followupDetails">
+                  
+                  <td style="width: 25%">{{followup.dof | date}}</td>
+                    <td style="width: 65%">
+                    
+            
+    <textarea class="form-control" ng-model="followup.observations" name="observations" placeholder="Observation Details" ></textarea>
+                        </td>
+                        <td width="10%">
+                
+       
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+    
+</div>
+        
+
+          <button type="submit" class="btn-xs btn-primary">Submit</button>
+          <a class="btn-sm btn-danger" href="#/patients/details/{{patient._id}}">Cancel</a>
+
+        
+        </div>
+

@@ -1,0 +1,61 @@
+<h3 class="heading">Patients</h3>
+<div ng-controller = "PatientsCtrl">
+     
+   
+    
+   <div class="row">
+       
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" ng-model="textFilter" class="form-control" placeholder="search table ..."/>
+        </div>
+       <label>Followups on:</label>
+        <div class="form-group">
+            <input type="date" ng-model="dateFilter" class="form-control" timezone="UTC"/>
+  
+            <a class="fa fa-search" href="#/patients/date/{{dateFilter | date: 'yyyy-MM-dd'}}"></a>
+        </div>
+</form>
+    </div>
+
+	<div class="table-responsive">
+		<table class="table table-striped" >
+              <thead>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Mobile No.</th>
+                  <th>Age</th>
+                  <th>Followup Date</th>
+                  <th>Last Observation</th>
+                  <th>Actions</th>
+            </thead>
+              <tbody>
+                   
+                <!--tr ng-repeat="patient in patients | limitTo: 10 | filter:textFilter"-->
+                  <tr dir-paginate="patient in patients | filter:textFilter | itemsPerPage: pageSize" current-page="currentPage">
+                  <td style="width: 15%">{{patient.fname}}</td>
+                  <td style="width: 15%">{{patient.lname}}</td>
+                  <td style="width: 10%">{{patient.contacts.mobile}}</td>
+                  <td style="width: 5%">{{patient.age}}</td>
+                  <td style="width: 15%">{{patient.donf | date}}</td>
+                      <td style="width: 30%"> <a class="btn-sm btn-link" href="" ng-click="open(patient.followupDetails[patient.followupDetails.length - 1].observations)">{{patient.followupDetails[patient.followupDetails.length - 1].observations | limitTo: 5}}</a></td>
+                    <td style="width: 10%">
+                        <a class="btn-sm btn-default" href="#/patients/details/{{patient._id}}">Details</a></td>
+                 
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+    <div ng-controller="OtherController" class="other-controller">
+          <div class="text-right">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="bower_components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+    
+    
+   
+
+        
+   
+</div>

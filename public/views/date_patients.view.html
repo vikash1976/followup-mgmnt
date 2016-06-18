@@ -1,0 +1,36 @@
+<h3 class="heading">Patients</h3>
+<div ng-controller = "PatientsDateCtrl">
+	<a class="fa fa-backward" href="#patients/serachResults"></a>
+	<div class="table-responsive">
+		<table class="table table-striped">
+             <thead>
+                <th>First Name</th>
+                  
+                  <th>Mobile No.</th>
+                  <th>Age</th>
+                  <th>Followup Date</th>
+                  <th>Last Observation</th>
+                  <!--th>Actions</th-->
+            </thead> 
+              <tbody>
+                <tr dir-paginate="patient in patients | filter:textFilter | itemsPerPage: pageSize" current-page="currentPage">
+                  <td style="width: 15%">{{patient.fname}}</td>
+                  <td style="width: 15%">{{patient.contacts.mobile}}</td>
+                  <td style="width: 5%">{{patient.age}}</td>
+                  <td style="width: 10%">{{patient.donf | date}}</td>
+                    <td style="width: 45%">{{patient.followupDetails[patient.followupDetails.length - 1].observations | limitTo: 5}} <a href="" ng-show="patient.followupDetails[patient.followupDetails.length - 1].observations.length > 5" ng-click="open(patient.followupDetails[patient.followupDetails.length - 1].observations)">...</a></td>
+                    <!--td style="width: 10%">
+                        <a class="btn btn-default" href="#/patients/details/{{patient._id}}">Details</a></td-->
+                 
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+    <div ng-controller="OtherController" class="other-controller">
+          <div class="text-right">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="bower_components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+    
+</div>

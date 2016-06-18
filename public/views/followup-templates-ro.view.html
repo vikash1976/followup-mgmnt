@@ -1,0 +1,150 @@
+<section>
+
+    <form id="fuTempForm" name="fuTempForm" >
+        <div class="container-fluid">
+		
+            <button type="button" class="close" ng-click="cancel();"><i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i></button><div class="modal-header"><h3 class="modal-title">Template Details</h3></div>
+
+
+        
+
+<div class="modal-body">
+    
+    <div class="row">
+                   
+        <div class="col-sm-6">
+                
+    
+            <label class="control-label">Complexion: </label>
+        <p class="form-control">{{template.complexion}}</p>
+                <!--input type="text" class="form-control" ng-model="template.complexion" name="complexion" placeholder="Complexion"> </input-->
+                <label class="control-label">Thrist/Tounge: </label>
+            <p class="form-control">{{template.thirst}}</p>
+                <!--input type="text" class="form-control" ng-model="template.thirst" name="thirt" placeholder="Thrist/Tounge"> </input-->
+                <label class="control-label">Aversion/Acidity/Desire: </label>
+            <p class="form-control">{{template.desire}}</p>
+                <!--input type="text" class="form-control" ng-model="template.desire" name="desire" placeholder="Aversion/Acidity/Desire"> </input-->
+                <label class="control-label">Bowel/Mict: </label>
+            <p class="form-control">{{template.bowel}}</p>
+                <!--input type="text" class="form-control" ng-model="template.bowel" name="bowel" placeholder="Bowel/Mict"> </input-->
+                <label class="control-label">Sleep/Dreams: </label>
+            <p class="form-control">{{template.sleep}}</p>
+                                <label class="control-label">Palms/Nails: </label>
+            <p class="form-control">{{template.palms}}</p>
+                <!--input type="text" class="form-control" ng-model="template.palms" name="palms" placeholder="Palms/Nails"> </input-->
+            <label class="control-label">Wart/Moles: </label>
+            <p class="form-control">{{template.warts}}</p>
+        </div>
+        <div class="col-sm-6">
+        <!--input type="text" class="form-control" ng-model="template.sleep" name="sleep" placeholder="Sleep/Dreams"> </input-->
+        
+            <label class="control-label">Nose/Throat: </label>
+            <p class="form-control">{{template.nose}}</p>
+            <label class="control-label">Sole of feet/Lat. Mall: </label>
+            <p class="form-control">{{template.feetsole}}</p>
+            <label class="control-label">Corns: </label>
+            <p class="form-control">{{template.corns}}</p>
+            <label class="control-label">Ear festers: </label>
+            <p class="form-control">{{template.festers}}</p>
+            <label class="control-label">Anger/Consolation: </label>
+            <p class="form-control">{{template.anger}}</p>
+            <label class="control-label">LM/Constipation during MC: </label>
+            <p class="form-control">{{template.constipation}}</p>
+            <label class="control-label">H/O major illness: </label>
+            <p class="form-control">{{template.majorillness}}</p>
+        </div>
+    </div>
+        
+      
+           
+
+    <div class="row">
+                   
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label">Taste:</label>
+                <tastes ng-repeat="taste in template.tastes">
+                  <label class="label-value">{{taste}}</label>
+                </tastes>
+            </div>
+
+        <div class="form-group">
+            <label class="control-label">Sun heat aagevation:</label>
+            <heataggrs ng-repeat="heat in template.heataggrs">
+              <label  class="label-value">{{heat}}</label>
+            </heataggrs>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Skin:</label>
+            <skins ng-repeat="skin in template.skins">
+              <label class="label-value">{{skin}}</label>
+            </skins>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label">Miastmatic:</label>
+            <miastmatic ng-repeat="taste in template.miastmatic">
+              <label class="label-value">{{taste}}</label>
+            </tastes>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Menstrual:</label>
+            <menstrual ng-repeat="heat in template.menstrual">
+              <label  class="label-value">{{heat}}</label>
+            </heataggrs>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Leucorrhoea:</label>
+            <leucorrhoea ng-repeat="skin in template.leucorrhoea">
+              <label class="label-value">{{skin}}</label>
+            </skins>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        
+        <div class="form-group">
+            <label class="control-label">Breastpain:</label>
+            <breastpain ng-repeat="skin in template.breastpain">
+              <label class="label-value">{{skin}}</label>
+            </skins>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Emotions:</label>
+            <label class="label-value">{{template.emotions}}</label>
+            </skins>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Confidence:</label>
+            <label class="label-value">{{template.confidence}}</label>
+            </skins>
+        </div>
+        <div class="form-group">
+            <label class="control-label">IDDM:</label>
+            <label class="label-value">{{template.iddm}}</label>
+            </skins>
+        </div>
+        <div class="form-group">
+            <label class="control-label">H1:</label>
+            <label class="label-value">{{template.h1}}</label>
+            </skins>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Thyroid:</label>
+            <label class="label-value">{{template.thyroid}}</label>
+            </skins>
+        </div>
+    </div>
+    
+
+</div>
+<div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="copyThis()">Copy From It</button>
+            
+</div>
+    
+</div>
+</div>
+</form>
+</section>

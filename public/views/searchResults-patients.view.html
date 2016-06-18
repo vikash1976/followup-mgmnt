@@ -1,0 +1,65 @@
+<h3 class="heading">Patients</h3>
+<div ng-controller = "PatientsSearchResultsCtrl">
+    <div class="row">
+	<!--a class="btn" href="/#patients/dashboard">Dashboard</a>
+    <a class="btn" href="/#patients/add">Add Paients</a-->
+       
+    
+    <form class="navbar-form navbar-right">
+    
+                    <input type="text" ng-model="textFilter" class="form-control input-sm" placeholder="search table ..."/>
+        <input type="date" ng-model="dateFilter" class="form-control input-sm" timezone="UTC" ng-show="searchOption === 'fdate'"/>
+
+    <div class="btn-group" title="SearchFor">
+        <label class="btn-sm btn-primary" ng-model="searchOption" btn-radio="'fdate'">Followup Date</label>
+                <label class="btn-sm btn-primary" ng-model="searchOption" btn-radio="'fname'" >FirstName</label>
+                <label class="btn-sm btn-primary" ng-model="searchOption" btn-radio="'lname'">LastName</label>
+                <label class="btn-sm btn-primary" ng-model="searchOption" btn-radio="'mobile'">Mobile</label>
+        
+
+            </div>
+        <div class="form-group">
+            <input type="text" ng-model="dataFilter" class="form-control input-sm" placeholder="{{searchOption}}" ng-show="searchOption !== 'fdate'"/>
+            
+            <a class="fa fa-search" title="Search on any 1 of 3" ng-click="searchData()"></a>
+        </div>
+         
+    </form>
+</div>
+    <hr/>
+
+    
+	<div class="table-responsive">
+		<table class="table table-striped">
+               <thead>
+                <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Mobile No.</th>
+                  <th>Age</th>
+                  <th>Followup Date</th>
+                  <th>Last Observation</th>
+                  <th>Actions</th>
+            </thead>
+              <tbody>
+                <tr dir-paginate="patient in patients | filter:textFilter | itemsPerPage: pageSize track by $index" current-page="currentPage">
+                  <td style="width: 15%">{{patient.fname}}</td>
+                    <td style="width: 15%">{{patient.lname}}</td>
+                  <td style="width: 10%">{{patient.contacts.mobile}}</td>
+                  <td style="width: 10%">{{patient.age}}</td>
+                  <td style="width: 10%">{{patient.donf | date}}</td>
+                    <td style="width: 30%"> <a href="" class="btn-sm btn-link" ng-click="open(patient.followupDetails[patient.followupDetails.length - 1].observations)">{{patient.followupDetails[patient.followupDetails.length - 1].observations | limitTo: 40}}</a></td>
+                    <td style="width: 10%">
+                        <a class="btn-sm btn-link" href="#/patients/details/{{patient._id}}">Details</a></td>
+                 
+                </tr>
+            </tbody>
+        </table>
+			
+	</div>
+    <div ng-controller="OtherController" class="other-controller">
+          <div class="text-right">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="bower_components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+    
+</div>

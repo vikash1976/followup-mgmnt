@@ -1,0 +1,166 @@
+<div class="form-group" >
+    <div class="col-md-6">
+           
+        <input type="date" class="form-control" ng-model="newFollowup.dof" name="dof" ng-disabled="true"></input>
+            <textarea class="form-control" ng-model="newFollowup.observations"                                     name="observations" placeholder="Observation Details" ></textarea>
+        <input type="date" class="form-control" ng-model="newFollowup.donf" name="donf" title="Next Followup Date">                   </input>
+        <input type="text" class="form-control" ng-model="newFollowup.fee" name="fee"                       placeholder="Fee Amount"> </input>
+
+
+        
+
+
+    <div ng-show="moreDetails">
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.complexion"              name="complexion" placeholder="Complexion"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.thirst"                  name="thirt" placeholder="Thrist/Tounge"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.desire"                  name="desire" placeholder="Aversion/Acidity/Desire"> </input>
+
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.bowel"                    name="bowel" placeholder="Bowel/Mict"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.sleep"                    name="sleep" placeholder="Sleep/Dreams"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.palms"                       name="palms" placeholder="Palms/Nails"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.elbows"                  name="elbows" placeholder="Elbows"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.warts"                       name="warts" placeholder="Wart/Moles"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.nose"                        name="nose" placeholder="Nose/Throat"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.feetsole"                    name="feetsole" placeholder="Sole of feet/ Lat. Mall"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.corns"                       name="corns" placeholder="Corns"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.festers"                     name="festers" placeholder="Ear festers"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.anger"                       name="anger" placeholder="Anger/Consolation"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.constipation"                name="constipation" placeholder="LM/Constipation during MC"> </input>
+        <input type="text" class="form-control" ng-model="newFollowup.otherDetails.majorillness"                name="majorillness" placeholder="H/O major illness"> </input>
+</div>
+      
+    </div>
+    <div class="col-md-6" ng-show="moreDetails">
+        <div class="form-group">
+            <label>Taste</label>
+            <div class="btn-group-cb">
+
+            <tastes ng-repeat="taste in tastes">
+              <button type="button" class="btn-xs btn-info"  ng-model="taste.truthy" 
+              btn-checkbox>{{taste.name}}</button>
+            </tastes>
+        </div>
+            </div>
+           <div class="form-group">
+            <label>Sun heat aagevation</label>
+            <div class="btn-group-cb">
+
+            <heataggrs ng-repeat="heat in heataggrs">
+              <button type="button" class="btn-xs btn-info"  ng-model="heat.truthy" 
+              btn-checkbox>{{heat.name}}</button>
+            </heataggrs>
+        </div>
+            </div>
+           <div class="form-group">
+            <label>Skin</label>
+                <div class="btn-group-cb">
+
+                <skins ng-repeat="skin in skins">
+                  <button type="button" class="btn-xs btn-info"  ng-model="skin.truthy" 
+                  btn-checkbox>{{skin.name}}</button>
+                </skins>
+                </div>
+            </div>
+
+            <div class="form-group">
+            <label>Miastmatic</label>
+                <div class="btn-group-cb">
+
+                <skins ng-repeat="item in miastmatic">
+                  <button type="button" class="btn-xs btn-info"  ng-model="item.truthy" 
+                  btn-checkbox>{{item.name}}</button>
+                </skins>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Menstrual H/O</label>
+                    <div class="btn-group-cb">
+
+                    <skins ng-repeat="item in menstrual">
+                      <button type="button" class="btn-xs btn-info"  ng-model="item.truthy" 
+                      btn-checkbox>{{item.name}}</button>
+                    </skins>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label>Leucorrhoea</label>
+                    <div class="btn-group-cb">
+
+                    <skins ng-repeat="item in leucorrhoea">
+                      <button type="button" class="btn-xs btn-info"  ng-model="item.truthy" 
+                      btn-checkbox>{{item.name}}</button>
+                    </skins>
+                    </div>
+            </div>
+
+
+            <div class="form-group">
+                    <label>Breast pain</label>
+                        <div class="btn-group-cb">
+
+                        <skins ng-repeat="item in breastpain">
+                          <button type="button" class="btn-xs btn-info"  ng-model="item.truthy" 
+                          btn-checkbox>{{item.name}}</button>
+                        </skins>
+                        </div>
+            </div>
+        <div class="form-group">
+                    <!--label>Emotions</label-->
+
+                <div class="btn-group" title="Emotions">
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.emotions" btn-radio="'Cries easily'">Cries easily</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.emotions" btn-radio="'Better by consolation'">Better by consolation</label>
+
+        </div>
+        </div>
+        <div class="form-group">
+                    <!--label>Confidence</label-->
+
+                <div class="btn-group" title="Confidence">
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.confidence" btn-radio="'Bold'">Bold</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.confidence" btn-radio="'Confuse'">Confuse</label>
+
+        </div>
+        </div>
+           <div class="form-group">
+                    <!--label>IDDM</label-->
+
+                <div class="btn-group" title="IDDM">
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.iddm" btn-radio="'M'">M</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.iddm" btn-radio="'F'">F</label>
+
+        </div>
+        </div>
+              <div class="form-group">
+                    <!--label>H1</label-->
+
+                <div class="btn-group" title="H1">
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.h1" btn-radio="'M'">M</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.h1" btn-radio="'F'">F</label>
+
+        </div>
+        </div>
+              <div class="form-group">
+                    <!--label>Thyroid</label-->
+
+                <div class="btn-group" title="Thyroid">
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.thyroid" btn-radio="'M'" >M</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.thyroid" btn-radio="'F'">F</label>
+            <label class="btn-xs btn-info" ng-model="newFollowup.otherDetails.thyroid" btn-radio="'C'">C</label>
+
+        </div>
+    </div>
+</div>
+<div class="form-group pull-right">
+        <a href="#" ng-click="moreDetails=!moreDetails;"><i class="fa fa-chevron-down pull-right pull-down" title="Expand" ng-if="!moreDetails"></i></a>
+        <a href="#" ng-click="moreDetails=!moreDetails;"><i class="fa fa-chevron-up pull-right pull-down" title="Collapse" ng-if="moreDetails"></i></a>
+        <a ng-click="updatePatient()" class="fa fa-save pull-right pull-down" title="Save"></a>
+        Templatize:<input type="checkbox" ng-model="template.isTemplate" ng-init="isTemplate=false">
+        <input type="text" class="form-control input-sm" ng-model="template.templateName" ng-show="template.isTemplate">
+            
+
+ </div>      
+    
+    </div>

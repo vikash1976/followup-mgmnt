@@ -1,0 +1,158 @@
+<section>
+
+    <form id="fuTempForm" name="fuTempForm" >
+        <div class="container-fluid">
+<button type="button" class="close" ng-click="cancel();"><i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i></button><div class="modal-header"><h3 class="modal-title">Followup Details</h3></div>
+
+<div class="modal-body">
+      <div class="row">
+                   
+        <div class="col-sm-6">
+
+                
+                <label class="control-label">Date of Followup: </label>
+
+                <p class="form-control">{{newFollowup.dof | date}}</p>
+
+                        <label class="control-label">Observation Details: </label>
+                <p class="form-control-static">{{newFollowup.observations}}</p>
+
+                        <label class="control-label">Fee Amount: </label>
+                <p class="form-control">{{newFollowup.fee}}</p>
+
+                <label class="control-label">Complexion: </label>
+                        <p class="form-control">{{newFollowup.otherDetails.complexion}}</p>
+
+                    <label class="control-label">Thrist/Tounge: </label>
+                <p class="form-control">{{newFollowup.otherDetails.thirst}}</p>
+
+                    <label class="control-label">Aversion/Acidity/Desire: </label>
+                <p class="form-control">{{newFollowup.otherDetails.desire}}</p>
+
+                    <label class="control-label">Bowel/Mict: </label>
+                <p class="form-control">{{newFollowup.otherDetails.bowel}}</p>
+
+                    <label class="control-label">Sleep/Dreams: </label>
+                <p class="form-control">{{newFollowup.otherDetails.sleep}}</p>
+                        <label class="control-label">Palms/Nails: </label>
+                <p class="form-control">{{newFollowup.otherDetails.palms}}</p>
+            </div>
+     
+                   
+        <div class="col-sm-6">
+      
+            <label class="control-label">Wart/Moles: </label>
+            <p class="form-control">{{newFollowup.otherDetails.warts}}</p>
+            <label class="control-label">Nose/Throat: </label>
+            <p class="form-control">{{newFollowup.otherDetails.nose}}</p>
+            <label class="control-label">Sole of feet/Lat. Mall: </label>
+            <p class="form-control">{{newFollowup.otherDetails.feetsole}}</p>
+            <label class="control-label">Corns: </label>
+            <p class="form-control">{{newFollowup.otherDetails.corns}}</p>
+            <label class="control-label">Ear festers: </label>
+            <p class="form-control">{{newFollowup.otherDetails.festers}}</p>
+            <label class="control-label">Anger/Consolation: </label>
+            <p class="form-control">{{newFollowup.otherDetails.anger}}</p>
+            <label class="control-label">LM/Constipation during MC: </label>
+            <p class="form-control">{{newFollowup.otherDetails.constipation}}</p>
+            <label class="control-label">H/O major illness: </label>
+            <p class="form-control">{{newFollowup.otherDetails.majorillness}}</p>
+
+            </div>
+          </div>
+    <div class="row">
+                   
+        <div class="col-sm-6">
+
+            <div class="form-group">
+                <label class="control-label">Taste:</label>
+                <tastes ng-repeat="taste in newFollowup.otherDetails.tastes track by $index">
+                  <label class="label-value">{{taste}}</label>
+                </tastes>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sun heat aagevation:</label>
+                <heataggrs ng-repeat="heat in newFollowup.otherDetails.heataggrs track by $index">
+                  <label  class="label-value">{{heat}}</label>
+                </heataggrs>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Skin:</label>
+                <skins ng-repeat="skin in newFollowup.otherDetails.skins track by $index">
+                  <label class="label-value">{{skin}}</label>
+                </skins>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label">Miastmatic:</label>
+                <miastmatic ng-repeat="taste in newFollowup.otherDetails.miastmatic track by $index">
+                  <label class="label-value">{{taste}}</label>
+                </tastes>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Menstrual:</label>
+                <menstrual ng-repeat="heat in newFollowup.otherDetails.menstrual track by $index">
+                  <label  class="label-value">{{heat}}</label>
+                </heataggrs>
+            </div>
+            <div class="form-group">
+            <label class="control-label">Leucorrhoea:</label>
+    	       <leucorrhoea ng-repeat="leucorrhoea in newFollowup.otherDetails.leucorrhoea track by $index">
+            <label class="label-value">{{leucorrhoea}}</label>
+            </leucorrhoea>
+            </div>
+        </div>
+        <div class="col-sm-6">
+    
+            <div class="form-group">
+                <label class="control-label">Breastpain:</label>
+                <breastpain ng-repeat="breastpain in newFollowup.otherDetails.breastpain track by $index">
+                  <label class="label-value">{{breastpain}}</label>
+                </breastpain>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Emotions:</label>
+                <label class="label-value">{{newFollowup.otherDetails.emotions}}</label>
+                </skins>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Confidence:</label>
+                <label class="label-value">{{newFollowup.otherDetails.confidence}}</label>
+                </skins>
+            </div>
+            <div class="form-group">
+                <label class="control-label">IDDM:</label>
+                <label class="label-value">{{newFollowup.otherDetails.iddm}}</label>
+                </skins>
+            </div>
+            <div class="form-group">
+                <label class="control-label">H1:</label>
+                <label class="label-value">{{newFollowup.otherDetails.h1}}</label>
+                </skins>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Thyroid:</label>
+                <label class="label-value">{{newFollowup.otherDetails.thyroid}}</label>
+                </skins>
+            </div>
+    </div>
+</div>
+    
+</div>
+
+</div>
+    
+
+</div>
+</form>
+</section>
+   
+    
+ 
+
+
+   
+    
+    
